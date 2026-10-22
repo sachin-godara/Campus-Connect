@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- SE Lab Template provided by Assistant Prof. Vishesh Panghal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connect - Login</title>
+    <link rel="stylesheet" href="./style.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Campus Connect</h1>
+                <p>Welcome back! Please login to your account.</p>
+            </div>
+
+            <div class="message-box" data-testid="message-box" hidden></div>
+            
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" value="student@campus.edu" placeholder="student@campus.edu" required data-testid="email-input">
+                    <span class="error-message" id="emailError">Please enter a valid email.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" value="password123" placeholder="••••••••" required minlength="8" data-testid="password-input">
+                    <span class="error-message" id="passwordError">Password must be at least 8 characters.</span>
+                </div>
+                
+                <div class="form-actions">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember" name="remember" data-testid="remember-checkbox">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block" data-testid="login-button">Sign In</button>
+                
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="#" id="showRegister" data-testid="show-register">Sign up here</a></p>
+                </div>
+            </form>
+
+            <form id="registerForm" class="auth-form" hidden>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Student Name" required data-testid="register-name">
+                </div>
+
+                <div class="form-group">
+                    <label for="registerEmail">Email Address</label>
+                    <input type="email" id="registerEmail" name="registerEmail" placeholder="newstudent@campus.edu" required data-testid="register-email">
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" name="registerPassword" placeholder="Minimum 8 characters" required minlength="8" data-testid="register-password">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" data-testid="register-button">Create Account</button>
+
+                <div class="auth-footer">
+                    <p>Already registered? <a href="#" id="showLogin" data-testid="show-login">Back to login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <p>Campus Connect Template - Designed by Assistant Prof. Vishesh Panghal for SE Lab</p>
+    </footer>
+</body>
+</html>

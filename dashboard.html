@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- SE Lab Template provided by Assistant Prof. Vishesh Panghal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connect - Dashboard</title>
+    <link rel="stylesheet" href="./style.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-light">
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="logo">Campus Connect</h2>
+            <div class="nav-links">
+                <a href="dashboard.html" class="active">Home</a>
+                <a href="events.html" data-testid="nav-events">Events</a>
+                <a href="groups.html" data-testid="nav-groups">Groups</a>
+                <a href="profile.html" class="btn btn-outline" data-testid="nav-profile">Profile</a>
+                <a href="index.html" class="btn btn-outline" data-testid="nav-logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="card profile-summary">
+                <div class="avatar-placeholder"></div>
+                <h3 data-current-user>Student Name</h3>
+                <p data-current-department>Computer Science '25</p>
+                <div class="stats">
+                    <div><strong>42</strong><span>Connections</span></div>
+                    <div><strong>15</strong><span>Posts</span></div>
+                </div>
+            </div>
+            
+            <div class="card upcoming-events">
+                <h3>Upcoming Events</h3>
+                <ul class="event-list" data-testid="event-list">
+                    <li>
+                        <div class="event-date">Oct 15</div>
+                        <div class="event-details">
+                            <h4>Hackathon 2026</h4>
+                            <p>Main Hall</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="event-date">Oct 18</div>
+                        <div class="event-details">
+                            <h4>Tech Talk: AI</h4>
+                            <p>Room 304</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Feed -->
+        <section class="feed">
+            <div class="message-box" data-testid="message-box" hidden></div>
+
+            <div class="card create-post">
+                <form id="postForm">
+                    <textarea placeholder="What's happening on campus?" required data-testid="post-input"></textarea>
+                    <div class="post-actions">
+                        <button type="button" class="btn btn-text">Add Photo</button>
+                        <button type="submit" class="btn btn-primary" data-testid="post-submit">Post</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="post-feed" data-testid="post-feed">
+                <!-- Posts are rendered from script.js mock data. -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Campus Connect Template - Designed by Assistant Prof. Vishesh Panghal for SE Lab</p>
+    </footer>
+</body>
+</html>

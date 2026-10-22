@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- SE Lab Template provided by Assistant Prof. Vishesh Panghal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connect - Profile</title>
+    <link rel="stylesheet" href="./style.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-light">
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="logo">Campus Connect</h2>
+            <div class="nav-links">
+                <a href="dashboard.html">Home</a>
+                <a href="events.html" data-testid="nav-events">Events</a>
+                <a href="groups.html" data-testid="nav-groups">Groups</a>
+                <a href="profile.html" class="active" data-testid="nav-profile">Profile</a>
+                <a href="index.html" class="btn btn-outline">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <div class="message-box" data-testid="message-box" hidden></div>
+
+        <!-- Main Profile Info -->
+        <section class="profile-main card">
+            <div class="profile-header-bg"></div>
+            <div class="profile-details-wrapper">
+                <div class="avatar-large"></div>
+                <div class="profile-info">
+                    <h2><span data-testid="profile-name">Student Name</span> <span class="badge">Student</span></h2>
+                    <p class="bio" data-testid="profile-bio">Passionate about web development, AI, and open source. CS batch of '25.</p>
+                    <ul class="profile-meta">
+                        <li>📍 University Campus</li>
+                        <li data-testid="profile-email">student@campus.edu</li>
+                        <li data-testid="profile-github">github.com/student</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary edit-profile-btn" data-testid="edit-profile-btn">Edit Profile</button>
+            </div>
+        </section>
+
+        <!-- Profile Tabs -->
+        <section class="profile-content">
+            <div class="tabs">
+                <button class="tab active" data-testid="tab-posts">My Posts</button>
+                <button class="tab" data-testid="tab-about">About</button>
+                <button class="tab" data-testid="tab-connections">Connections</button>
+            </div>
+            
+            <div class="card tab-panel active">
+                <h3>Recent Activity</h3>
+                <div class="post-feed">
+                    <div class="card post">
+                        <div class="post-content">
+                            <p>Just pushed my final project for the Web Dev course! Check it out! 🚀</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div id="editModal" class="modal" data-testid="edit-modal" aria-hidden="true">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <span class="close" data-testid="close-modal">&times;</span>
+            </div>
+            <form id="profileForm" class="auth-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" value="Student Name" required data-testid="edit-name">
+                </div>
+                <div class="form-group">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio" name="bio" rows="3" data-testid="edit-bio">Passionate about web development, AI, and open source. CS batch of '25.</textarea>
+                </div>
+                <div class="form-actions" style="margin-top: 1rem;">
+                    <button type="submit" class="btn btn-primary" data-testid="save-profile-btn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>Campus Connect Template - Designed by Assistant Prof. Vishesh Panghal for SE Lab</p>
+    </footer>
+</body>
+</html>
